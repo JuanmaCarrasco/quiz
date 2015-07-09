@@ -1,7 +1,23 @@
-<table>
+<p>
+  <form method="get" action="/quizes">
+    Buscador:
+    <input type="text" name="search" value="" />
+    <input type="submit" value="Buscar" >
+  </form>
+</p>
+<br />
+
+<table width="80%" cellpading="0" cellspacing="5" border="0" style="text-align:center;">
+  <tr>
+    <th>Pregunta</th>
+    <th>Temática</th>
+    <th></th>
+    <th></th>
+  </tr>
 <% var i; for (i=0; i < quizes.length; i++) { %>
    <tr>
       <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+      <td><%= quizes[i].tema %></a></td>
       <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
       <td>
         <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
